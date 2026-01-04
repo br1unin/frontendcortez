@@ -1,8 +1,4 @@
-const API_BASE =
-  import.meta.env.VITE_API_URL ||
-  (typeof process !== "undefined" ? (process.env as any)?.NEXT_PUBLIC_API_URL : "") ||
-  "";
-
+const API_BASE = import.meta.env.VITE_API_URL || ""; 
 export function getApiBase() {
   return API_BASE as string;
 }

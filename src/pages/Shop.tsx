@@ -241,8 +241,10 @@ export default function Shop() {
 
   // -------------------- Render --------------------
   return (
+    
     <div className="space-y-4">
       <div className="bg-red-500 text-white p-2 text-center font-bold"></div>
+        SHOP TSX EDITADO
       {checkoutStep === "browse" && (
         <div className="grid gap-4 md:grid-cols-[280px_1fr]">
           {/* Sidebar filtros (desktop) */}

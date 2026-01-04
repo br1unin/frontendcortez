@@ -40,7 +40,7 @@ export default function Header({
           </div>
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-cen  ter gap-2">
           {checkoutStep !== "browse" ? (
             <Badge className="hidden sm:inline-flex">Checkout</Badge>
           ) : (
