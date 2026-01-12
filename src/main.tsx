@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import RootLayout from "./layout/RootLayout";
@@ -11,28 +10,37 @@ import BillingPage from "./pages/BillingPage";
 import AccountPage from "./pages/AccountPage";
 import AdminPage from "./pages/AdminPage";
 import NotFoundPage from "./pages/NotFoundPage";
+import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage";
+import AdminLoginPage from "./pages/AdminLoginPage";
+import RequireAuth from "./auth/RequireAuth";
+import { AuthProvider } from "./auth/AuthContext";
 
-import "./styles.css";
+import "./index.css";
 
 const router = createBrowserRouter([
-  { 
+  {
     path: "/",
     element: <RootLayout />,
     children: [
       { index: true, element: <Shop /> },
-      { path: "orders", element: <OrdersPage /> },
-      { path: "addresses", element: <AddressesPage /> },
-      { path: "billing", element: <BillingPage /> },
-      { path: "account", element: <AccountPage /> },
-      { path: "admin", element: <AdminPage /> },
+      { path: "orders", element: <RequireAuth><OrdersPage /></RequireAuth> },
+      { path: "addresses", element: <RequireAuth><AddressesPage /></RequireAuth> },
+      { path: "billing", element: <RequireAuth><BillingPage /></RequireAuth> },
+      { path: "account", element: <RequireAuth><AccountPage /></RequireAuth> },
+      { path: "admin", element: <RequireAuth requireAdmin><AdminPage /></RequireAuth> },
+      { path: "admin/login", element: <AdminLoginPage /> },
+      { path: "login", element: <LoginPage /> },
+      { path: "register", element: <RegisterPage /> },
       { path: "*", element: <NotFoundPage /> },
     ],
   },
 ]);
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
+ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <App />
-    <RouterProvider router={router} />
-  </React.StrictMode>
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
+  </React.StrictMode>,
 );

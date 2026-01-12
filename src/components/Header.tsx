@@ -1,4 +1,3 @@
-import React from "react";
 import { ShoppingCart, Search } from "lucide-react";
 import { Badge, Button, Input } from "./ui";
 
@@ -23,8 +22,8 @@ export default function Header({
         <button onClick={onHome} className="flex items-center gap-2">
           <div className="grid h-10 w-10 place-items-center rounded-2xl bg-black text-white">RZ</div>
           <div className="text-left">
-            <div className="text-sm font-semibold leading-4">Revolución Shop</div>
-            <div className="text-xs text-black/60 leading-4">Frontend demo</div>
+            <div className="text-sm font-semibold leading-4">Revolucion Shop</div>
+            <div className="text-xs leading-4 text-black/60">Frontend demo</div>
           </div>
         </button>
 
@@ -34,17 +33,17 @@ export default function Header({
             <Input
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Buscar productos, marcas, tags…"
+              placeholder="Buscar productos, marcas, tags"
               className="pl-9"
             />
           </div>
         </div>
 
-        <div className="flex items-cen  ter gap-2">
+        <div className="flex items-center gap-2">
           {checkoutStep !== "browse" ? (
             <Badge className="hidden sm:inline-flex">Checkout</Badge>
           ) : (
-            <Badge className="hidden sm:inline-flex">Envío gratis +65k</Badge>
+            <Badge className="hidden sm:inline-flex">Envio gratis +65k</Badge>
           )}
 
           <Button variant="outline" onClick={onCart} className="relative">
@@ -62,7 +61,12 @@ export default function Header({
       <div className="mx-auto w-full max-w-6xl px-4 pb-3 md:hidden">
         <div className="relative">
           <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-black/40" />
-          <Input value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Buscar productos…" className="pl-9" />
+          <Input
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Buscar productos"
+            className="pl-9"
+          />
         </div>
       </div>
     </div>

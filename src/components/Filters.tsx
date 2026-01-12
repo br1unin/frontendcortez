@@ -1,4 +1,3 @@
-import React from "react";
 import { ARS } from "../lib/money";
 import { Button, Card, CardContent, CardHeader, CardTitle, Separator } from "./ui";
 
@@ -23,18 +22,18 @@ export default function Filters({
   priceBounds: { min: number; max: number };
   onReset: () => void;
 }) {
-  const list = categories?.length ? categories : ["Todos"];
+  const list = categories.length ? categories : ["Todos"];
 
   return (
     <Card>
       <CardHeader>
         <CardTitle>Filtros</CardTitle>
-        <div className="text-xs text-black/60">Refiná tu búsqueda</div>
+        <div className="text-xs text-black/60">Refina tu busqueda</div>
       </CardHeader>
 
       <CardContent className="space-y-4">
         <div>
-          <div className="mb-2 text-xs font-medium text-black/70">Categoría</div>
+          <div className="mb-2 text-xs font-medium text-black/70">Categoria</div>
           <div className="flex flex-wrap gap-2">
             {list.map((c) => (
               <button
@@ -51,10 +50,10 @@ export default function Filters({
         </div>
 
         <div>
-          <div className="mb-2 text-xs font-medium text-black/70">Precio máximo</div>
+          <div className="mb-2 text-xs font-medium text-black/70">Precio maximo</div>
           <div className="flex items-center justify-between text-xs">
             <span className="text-black/60">{ARS.format(priceBounds.min)}</span>
-            <span className="font-semibold">≤ {ARS.format(maxPrice)}</span>
+            <span className="font-semibold">A$ {ARS.format(maxPrice)}</span>
           </div>
           <input
             type="range"

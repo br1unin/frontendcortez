@@ -1,22 +1,22 @@
 export type Product = {
   id: string;
-  name?: string;
-  title?: string;
-  brand?: string;
-  category?: string;
+  name: string;
+  title: string;
+  brand: string;
+  category: string;
   price: number;
-  rating?: number;
-  stock?: number;
-  tags?: string[];
-  img?: string;
-  description?: string;
+  rating: number;
+  stock: number;
+  tags: string[];
+  img: string;
+  description: string;
 };
 
 export const DEMO_PRODUCTS: Product[] = [
   {
     id: "p1",
     name: "Aurora Hoodie",
-    brand: "Revolución",
+    brand: "Revolucion",
     category: "Ropa",
     price: 34990,
     rating: 4.7,
@@ -28,14 +28,14 @@ export const DEMO_PRODUCTS: Product[] = [
   {
     id: "p2",
     name: "Classic Tee",
-    brand: "Revolución",
+    brand: "Revolucion",
     category: "Ropa",
     price: 15990,
     rating: 4.5,
     stock: 42,
-    tags: ["básico"],
+    tags: ["basico"],
     img: "https://images.unsplash.com/photo-1520975693414-0f835d6e5f10?auto=format&fit=crop&w=1200&q=80",
-    description: "Remera de algodón peinado, suave y resistente. Ideal para usar todos los días.",
+    description: "Remera de algodon peinado, suave y resistente. Ideal para usar todos los dias.",
   },
   {
     id: "p3",
@@ -47,7 +47,7 @@ export const DEMO_PRODUCTS: Product[] = [
     stock: 10,
     tags: ["top"],
     img: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?auto=format&fit=crop&w=1200&q=80",
-    description: "Zapatillas minimalistas, plantilla cómoda y suela durable. Diseño limpio.",
+    description: "Zapatillas minimalistas, plantilla comoda y suela durable. Diseno limpio.",
   },
   {
     id: "p4",
@@ -60,7 +60,7 @@ export const DEMO_PRODUCTS: Product[] = [
     tags: ["premium"],
     img: "https://images.unsplash.com/photo-1518623380242-d992d3c57b35?auto=format&fit=crop&w=1200&q=80",
     description: "Mochila urbana con compartimento acolchado para laptop y bolsillos internos.",
-  }
+  },
 ];
 
 export function buildCategoriesFromProducts(products: Product[]) {

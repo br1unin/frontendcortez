@@ -7,5 +7,6 @@ export const endpoints = {
   orderDetails: "/order_details/",
   reviews: "/reviews/",
   categories: "/categories/",
+  billingMethods: "/billing_methods/",
   health: "/health_check/",
 } as const;

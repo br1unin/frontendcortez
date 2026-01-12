@@ -1,11 +1,11 @@
-import React from "react";
+import type { ButtonHTMLAttributes, HTMLAttributes, InputHTMLAttributes } from "react";
 
 export function Button({
   className = "",
   variant = "default",
   size = "md",
   ...props
-}: React.ButtonHTMLAttributes<HTMLButtonElement> & {
+}: ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: "default" | "ghost" | "outline" | "danger";
   size?: "sm" | "md" | "lg";
 }) {
@@ -30,7 +30,7 @@ export function Button({
   );
 }
 
-export function Input(props: React.InputHTMLAttributes<HTMLInputElement> & { className?: string }) {
+export function Input(props: InputHTMLAttributes<HTMLInputElement> & { className?: string }) {
   const { className = "", ...rest } = props;
   return (
     <input
@@ -40,27 +40,27 @@ export function Input(props: React.InputHTMLAttributes<HTMLInputElement> & { cla
   );
 }
 
-export function Card(props: React.HTMLAttributes<HTMLDivElement> & { className?: string }) {
+export function Card(props: HTMLAttributes<HTMLDivElement> & { className?: string }) {
   const { className = "", ...rest } = props;
   return <div className={`rounded-3xl border border-black/10 bg-white shadow-sm ${className}`} {...rest} />;
 }
 
-export function CardHeader(props: React.HTMLAttributes<HTMLDivElement> & { className?: string }) {
+export function CardHeader(props: HTMLAttributes<HTMLDivElement> & { className?: string }) {
   const { className = "", ...rest } = props;
   return <div className={`p-5 ${className}`} {...rest} />;
 }
 
-export function CardTitle(props: React.HTMLAttributes<HTMLDivElement> & { className?: string }) {
+export function CardTitle(props: HTMLAttributes<HTMLDivElement> & { className?: string }) {
   const { className = "", ...rest } = props;
   return <div className={`text-base font-semibold ${className}`} {...rest} />;
 }
 
-export function CardContent(props: React.HTMLAttributes<HTMLDivElement> & { className?: string }) {
+export function CardContent(props: HTMLAttributes<HTMLDivElement> & { className?: string }) {
   const { className = "", ...rest } = props;
   return <div className={`px-5 pb-5 ${className}`} {...rest} />;
 }
 
-export function Badge(props: React.HTMLAttributes<HTMLSpanElement> & { className?: string }) {
+export function Badge(props: HTMLAttributes<HTMLSpanElement> & { className?: string }) {
   const { className = "", ...rest } = props;
   return (
     <span
