@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import RootLayout from "./layout/RootLayout";
+import HomePage from "./pages/HomePage";
 import Shop from "./pages/Shop";
 import OrdersPage from "./pages/OrdersPage";
 import AddressesPage from "./pages/AddressesPage";
@@ -23,7 +24,8 @@ const router = createBrowserRouter([
     path: "/",
     element: <RootLayout />,
     children: [
-      { index: true, element: <Shop /> },
+      { index: true, element: <HomePage /> },
+      { path: "shop", element: <Shop /> },
       { path: "orders", element: <RequireAuth><OrdersPage /></RequireAuth> },
       { path: "addresses", element: <RequireAuth><AddressesPage /></RequireAuth> },
       { path: "billing", element: <RequireAuth><BillingPage /></RequireAuth> },

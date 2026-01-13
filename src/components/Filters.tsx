@@ -61,7 +61,7 @@ export default function Filters({
             max={priceBounds.max}
             value={maxPrice}
             onChange={(e) => setMaxPrice(Number(e.target.value))}
-            className="mt-2 w-full"
+            className="mt-2 w-full accent-black"
           />
         </div>
 

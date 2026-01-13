@@ -18,9 +18,7 @@ export default function Success({
         {orderId && (
           <div className="mt-2 text-sm text-black/70">Orden #{orderId}</div>
         )}
-        <div className="mt-2 text-sm text-black/60">
-          Esto es una demo. Aca mostrarias numero de orden, tracking, etc.
-        </div>
+        <div className="mt-2 text-sm text-black/60">Gracias por tu compra. En breve recibiras la confirmacion.</div>
         <div className="mt-6">
           <Button onClick={onContinue}>Seguir comprando</Button>
         </div>

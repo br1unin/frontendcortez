@@ -35,7 +35,7 @@ export async function apiFetch<T>(path: string, opts: ApiFetchOptions = {}): Pro
   });
 
   if (!res.ok) {
-    if (res.status === 401 || res.status === 403) {
+    if (res.status === 401) {
       localStorage.removeItem("auth_token");
       if (typeof window !== "undefined") {
         const isAdminPath = window.location.pathname.startsWith("/admin");
@@ -67,7 +67,9 @@ export async function apiFetch<T>(path: string, opts: ApiFetchOptions = {}): Pro
       // keep raw text
     }
     const normalized = message.toLowerCase();
-    if (normalized.includes("email") && normalized.includes("not a valid email")) {
+    if (normalized.includes("comment") && normalized.includes("at least 10 characters")) {
+      message = "La review debe tener al menos 10 caracteres.";
+    } else if (normalized.includes("email") && normalized.includes("not a valid email")) {
       message = "El email no es valido.";
     } else if (normalized.includes("field required")) {
       message = "Faltan campos obligatorios.";

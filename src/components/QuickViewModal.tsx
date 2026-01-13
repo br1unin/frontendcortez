@@ -115,15 +115,13 @@ export default function QuickViewModal({
                     "https://images.unsplash.com/photo-1520975958221-4f548d9ac0e9?auto=format&fit=crop&w=1200&q=80"
                   }
                   alt={product.name || product.title || "Producto"}
-                  className="h-64 w-full rounded-3xl object-cover"
+                  className="h-64 w-full rounded-3xl bg-white object-contain"
                 />
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
                     <div className="text-2xl font-semibold">{ARS.format(Number(product.price || 0))}</div>
                     <Badge className="rounded-full">Stock: {product.stock ?? "-"}</Badge>
                   </div>
-
-                  <p className="text-sm text-black/70">{product.description || "Sin descripcion."}</p>
 
                   <div className="flex flex-wrap gap-2">
                     {(product.tags || []).map((t: string) => (
@@ -143,9 +141,6 @@ export default function QuickViewModal({
                     </Button>
                   </div>
 
-                  <div className="text-xs text-black/60">
-                    Tip: aca podes agregar variantes (talle/color) si tu backend lo soporta.
-                  </div>
                 </div>
               </div>
 
