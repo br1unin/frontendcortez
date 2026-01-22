@@ -16,6 +16,7 @@ export const DEMO_PRODUCTS: Product[] = [
   {
     id: "p1",
     name: "Aurora Hoodie",
+    title: "Aurora Hoodie",
     brand: "Revolucion",
     category: "Ropa",
     price: 34990,
@@ -28,6 +29,7 @@ export const DEMO_PRODUCTS: Product[] = [
   {
     id: "p2",
     name: "Classic Tee",
+    title: "Classic Tee",
     brand: "Revolucion",
     category: "Ropa",
     price: 15990,
@@ -40,6 +42,7 @@ export const DEMO_PRODUCTS: Product[] = [
   {
     id: "p3",
     name: "Minimal Sneakers",
+    title: "Minimal Sneakers",
     brand: "RZ",
     category: "Calzado",
     price: 58990,
@@ -52,6 +55,7 @@ export const DEMO_PRODUCTS: Product[] = [
   {
     id: "p4",
     name: "Everyday Backpack",
+    title: "Everyday Backpack",
     brand: "RZ Gear",
     category: "Accesorios",
     price: 44990,
