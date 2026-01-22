@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import { ShoppingCart, Star, StarHalf } from "lucide-react";
 import { ARS } from "../lib/money";
